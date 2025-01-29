@@ -2,7 +2,8 @@
 
 If you were to randomly drop needles onto a plane with parallel lines spaced a distance of 2 **needls** apart, the ratio of needles that intersect a line to total needles approaches \(\pi\).  
 Mysterious? I think not.  
-(buffons-needle-visual.png)
+
+![Buffon’s Needle Demo](buffons-needle-visual.png)
 
 This is a small project to learn and practice fascinating **(geometric) probability theory**, specifically Monte Carlo simulations.
 
