@@ -26,15 +26,11 @@ Let’s say the needle has length $\ell$.
 
 Following through with these integrals, we get:
 
-$P \=\ \int_{\theta=0}^{\frac{\pi}{2}} \int_{x=0}^{\frac{\ell}{2}\sin(\theta)} \left( \frac{1}{\ell} \times \frac{2}{\pi} \right)\,dx\,d\theta \=\ \frac{1}{\pi}$
+$P \=\ \int_{\theta=0}^{\frac{\pi}{2}} \int_{x=0}^{\frac{\ell}{2}\sin(\theta)} \left( \frac{1}{\ell} \times \frac{2}{\pi} \right)\dx\d\theta \=\ \frac{1}{\pi}$
 
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
-\[
-N_{\text{cross}} \;=\; N_{\text{tot}} \times \frac{1}{\pi}
-\]
+$N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
 needles to cross a line. Rearranging this, we get
-\[
-\frac{N_{\text{tot}}}{N_{\text{cross}}} \;\approx\; \pi.
-\]
+$\frac{N_{\text{tot}}}{N_{\text{cross}}} \\approx\ \pi$
 As $N_{\text{tot}}$ becomes very large, this ratio converges to $\pi$ (by the Law of Large Numbers), making it a neat way to estimate $\pi$ empirically.
