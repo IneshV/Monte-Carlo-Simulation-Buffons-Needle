@@ -1,11 +1,11 @@
 # Buffon's Needle README
 
-If you were to randomly drop needles onto a plane with parallel lines spaced a distance of 2 **units** apart, the total number of needles over those that intersect a line approaches $\pi$???
+If you were to randomly drop needles onto a plane with parallel lines spaced a distance of 2 needles apart, the total number of needles over those that intersect a line approaches $\pi$???
 Mysterious? I think not.
 
 ![Buffon’s Needle Demo](buffons-needle-visual.png)
 
-This is a small project to learn and practice fascinating **(geometric) probability theory**, specifically Monte Carlo simulations.
+This is a small project to learn and practice fascinating (geometric) probability theory, specifically Monte Carlo simulations.
 
 ---
 
