@@ -14,9 +14,9 @@ Let’s say the needle has length \(\displaystyle \ell\).
 
 - For intersection, we care about the position \(x\) of the needle’s center and the angle \(\displaystyle \theta\).
 - The probability density of the center of the match is  
-  \[
+  $\[
   P_x \;=\; \frac{1}{\ell}.
-  \]
+  \]$
 - The probability density of the angle is  
   \[
   P_\theta \;=\; \frac{2}{\pi}.
