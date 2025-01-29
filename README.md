@@ -25,9 +25,9 @@ Let’s say the needle has length $\ell$.
 - Therefore, the $x$ integration bounds are from $0$ to $\frac{\ell}{2}\,\sin(\theta)$, and the $\theta$ integration goes from $0$ to $\frac{\pi}{2}$.
 
 Following through with these integrals, we get:
-\[
-P \;=\; \int_{\theta=0}^{\frac{\pi}{2}} \int_{x=0}^{\frac{\ell}{2}\sin(\theta)} \left( \frac{1}{\ell} \times \frac{2}{\pi} \right)\,dx\,d\theta \;=\; \frac{1}{\pi}.
-\]
+
+$P \=\ \int_{\theta=0}^{\frac{\pi}{2}} \int_{x=0}^{\frac{\ell}{2}\sin(\theta)} \left( \frac{1}{\ell} \times \frac{2}{\pi} \right)\,dx\,d\theta \=\ \frac{1}{\pi}$
+
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
 \[
