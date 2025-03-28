@@ -13,7 +13,7 @@ This is a small project to learn and practice fascinating (geometric) probabilit
 
 Let’s say the needle has length $\ell$.
 
-- For intersection, we care about the position $x$ of the needle’s center and the angle $\theta$.
+- For intersection, we care about the position $x$ ($y$ in image) of the needle’s center and the angle $\theta$.
 - The probability density of the center of the match is  
   $P_x = \frac{1}{\ell}$
 - The probability density of the angle is  
