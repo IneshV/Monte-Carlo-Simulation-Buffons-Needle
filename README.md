@@ -72,15 +72,6 @@ Simplify:
 
 $$
 P =
-\int_{0}^{\pi/2}
-\frac{1}{\pi}\sin(\theta)
-\,d\theta
-$$
-
-Pull out the constant:
-
-$$
-P =
 \frac{1}{\pi}
 \int_{0}^{\pi/2}
 \sin(\theta)
