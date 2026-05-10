@@ -27,59 +27,52 @@ Let’s say the needle has length $\ell$.
 Following through with these integrals, we get:
 
 $$
-P
-=
-\int_{\theta=0}^{\frac{\pi}{2}}
-\int_{y=0}^{\frac{\ell}{2}\sin(\theta)}
-\left(
-\frac{1}{\ell}
-\cdot
-\frac{2}{\pi}
-\right)
+P =
+\int_{0}^{\pi/2}
+\int_{0}^{(\ell/2)\sin(\theta)}
+\left(\frac{1}{\ell} \cdot \frac{2}{\pi}\right)
 \,dy\,d\theta
 $$
 
-Since the quantity inside the integral is constant with respect to \(y\), we first evaluate the inner integral:
+First, combine the constants:
 
 $$
-P
-=
-\int_{0}^{\frac{\pi}{2}}
-\left(
+P =
+\int_{0}^{\pi/2}
+\int_{0}^{(\ell/2)\sin(\theta)}
 \frac{2}{\pi \ell}
-\int_{0}^{\frac{\ell}{2}\sin(\theta)} dy
+\,dy\,d\theta
+$$
+
+Now evaluate the inside integral with respect to $y$:
+
+$$
+P =
+\int_{0}^{\pi/2}
+\frac{2}{\pi \ell}
+\left[
+y
+\right]_{0}^{(\ell/2)\sin(\theta)}
+d\theta
+$$
+
+Plug in the bounds for $y$:
+
+$$
+P =
+\int_{0}^{\pi/2}
+\frac{2}{\pi \ell}
+\left(
+\frac{\ell}{2}\sin(\theta) - 0
 \right)
 d\theta
 $$
 
-The inner integral is just the length of the interval:
+Simplify:
 
 $$
-\int_{0}^{\frac{\ell}{2}\sin(\theta)} dy
-=
-\frac{\ell}{2}\sin(\theta)
-$$
-
-So we substitute that back in:
-
-$$
-P
-=
-\int_{0}^{\frac{\pi}{2}}
-\left(
-\frac{2}{\pi \ell}
-\cdot
-\frac{\ell}{2}\sin(\theta)
-\right)
-d\theta
-$$
-
-The \(\ell\), \(2\), and \(\frac{1}{2}\) terms cancel:
-
-$$
-P
-=
-\int_{0}^{\frac{\pi}{2}}
+P =
+\int_{0}^{\pi/2}
 \frac{1}{\pi}\sin(\theta)
 \,d\theta
 $$
@@ -87,56 +80,41 @@ $$
 Pull out the constant:
 
 $$
-P
-=
+P =
 \frac{1}{\pi}
-\int_{0}^{\frac{\pi}{2}}
+\int_{0}^{\pi/2}
 \sin(\theta)
 \,d\theta
 $$
 
-Now evaluate the integral:
+Now integrate:
 
 $$
-\int \sin(\theta)\,d\theta
-=
--\cos(\theta)
-$$
-
-Therefore,
-
-$$
-P
-=
+P =
 \frac{1}{\pi}
 \left[
 -\cos(\theta)
-\right]_{0}^{\frac{\pi}{2}}
+\right]_{0}^{\pi/2}
 $$
 
-Plugging in the bounds:
+Evaluate the bounds:
 
 $$
-P
-=
+P =
 \frac{1}{\pi}
 \left(
--\cos\left(\frac{\pi}{2}\right)
-+
-\cos(0)
+-\cos(\pi/2) + \cos(0)
 \right)
 $$
 
-Since \(\cos(\frac{\pi}{2}) = 0\) and \(\cos(0)=1\),
+Since $\cos(\pi/2)=0$ and $\cos(0)=1$,
 
 $$
-P
-=
-\frac{1}{\pi}(0 + 1)
+P =
+\frac{1}{\pi}(1)
 =
 \frac{1}{\pi}
 $$
-
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
 $N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
