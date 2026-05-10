@@ -118,3 +118,50 @@ $N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
 needles to cross a line. Rearranging this, we get
 $\frac{N_{\text{tot}}}{N_{\text{cross}}} \\approx\ \pi$
 As $N_{\text{tot}}$ becomes very large, this ratio converges to $\pi$ (by the Law of Large Numbers), making it a neat way to estimate $\pi$ empirically.
+
+
+---
+
+## How Fast Does It Approach $\pi$?
+
+The estimate does not approach $\pi$ at a perfectly steady rate. Since each needle either crosses a line or does not cross a line, each drop is like a random trial with probability
+
+$$
+P = \frac{1}{\pi}
+$$
+
+of crossing.
+
+So if we drop $N_{\text{tot}}$ needles, then
+
+$$
+N_{\text{cross}} \sim \text{Binomial}\left(N_{\text{tot}}, \frac{1}{\pi}\right)
+$$
+
+Our estimate of $\pi$ is
+
+$$
+\hat{\pi}
+=
+\frac{N_{\text{tot}}}{N_{\text{cross}}}
+$$
+
+Because this is a Monte Carlo simulation, the error usually shrinks at a rate proportional to
+
+$$
+\frac{1}{\sqrt{N_{\text{tot}}}}
+$$
+
+This means that if we want about $10$ times less error, we need about $100$ times more needle drops.
+
+So the convergence is real, but slow:
+
+- $100$ drops gives a rough estimate
+- $10,000$ drops gives a much better estimate
+- $1,000,000$ drops gives an even better estimate, but still with random noise
+
+In other words, Buffon's Needle estimates $\pi$ through randomness, and the accuracy improves like a typical Monte Carlo method:
+
+$$
+\text{error} \approx O\left(\frac{1}{\sqrt{N_{\text{tot}}}}\right)
+$$
