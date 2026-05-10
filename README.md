@@ -21,8 +21,8 @@ Let’s say the needle has length $\ell$.
 - The probability for the needle to cross a line is given by the double integral  
   $P = \iint \bigl(P_y \,P_\theta\bigr)\,dy\,d\theta$
 - The condition for the needle to cross the line is  
-  $y < \frac{\ell}{2}\,\sin(\theta)$
-- Therefore, the $y$ integration bounds are from $0$ to $\frac{\ell}{2}\,\sin(\theta)$, and the $\theta$ integration goes from $0$ to $\frac{\pi}{2}$.
+  $y < \frac{\ell}{2}\sin(\theta)$
+- Therefore, the $y$ integration bounds are from $0$ to $\frac{\ell}{2}\sin(\theta)$, and the $\theta$ integration goes from $0$ to $\frac{\pi}{2}$.
 
 Following through with these integrals, we get:
 
