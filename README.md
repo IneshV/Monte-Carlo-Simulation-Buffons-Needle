@@ -26,8 +26,82 @@ Let’s say the needle has length $\ell$.
 
 Following through with these integrals, we get:
 
-$P \=\ \int_{\theta=0}^{\frac{\pi}{2}} \int_{y=0}^{\frac{\ell}{2}\sin(\theta)} \left( \frac{1}{\ell} \times \frac{2}{\pi} \right)\,dx)\,d\theta \=\ \frac{1}{\pi}$
+$$
+P
+=
+\int_{0}^{\pi/2}
+\int_{0}^{\frac{\ell}{2}\sin(\theta)}
+\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
+\,dy\,d\theta
+$$
 
+Since the integrand is constant with respect to \(y\), we can evaluate the inner integral first:
+
+$$
+P
+=
+\int_{0}^{\pi/2}
+\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
+\left[
+y
+\right]_{0}^{\frac{\ell}{2}\sin(\theta)}
+\,d\theta
+$$
+
+Substitute the bounds:
+
+$$
+P
+=
+\int_{0}^{\pi/2}
+\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
+\left(\frac{\ell}{2}\sin(\theta)\right)
+\,d\theta
+$$
+
+Now simplify the constants:
+
+$$
+\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
+\left(\frac{\ell}{2}\right)
+=
+\frac{1}{\pi}
+$$
+
+So the probability becomes:
+
+$$
+P
+=
+\frac{1}{\pi}
+\int_{0}^{\pi/2}
+\sin(\theta)
+\,d\theta
+$$
+
+Now evaluate the remaining integral:
+
+$$
+\int_{0}^{\pi/2}
+\sin(\theta)
+\,d\theta
+=
+\left[-\cos(\theta)\right]_{0}^{\pi/2}
+=
+-\cos\left(\frac{\pi}{2}\right) + \cos(0)
+=
+0 + 1
+=
+1
+$$
+
+Therefore,
+
+$$
+P
+=
+\frac{1}{\pi}
+$$
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
 $N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
