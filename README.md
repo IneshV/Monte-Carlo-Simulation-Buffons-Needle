@@ -123,42 +123,142 @@ As $N_{\text{tot}}$ becomes very large, this ratio converges to $\pi$ (by the La
 
 ## How Fast Does It Approach $\pi$?
 
-The estimate does not approach $\pi$ at a perfectly steady rate. Since each needle either crosses a line or does not cross a line, each drop is like a random trial with probability
+The estimate approaches $\pi$, but it does so slowly because this is a Monte Carlo simulation.
+
+Each needle drop is like a random trial:
+
+- it crosses a line, or
+- it does not cross a line.
+
+The true probability of crossing is
 
 $$
-P = \frac{1}{\pi}
+p = \frac{1}{\pi}
 $$
 
-of crossing.
-
-So if we drop $N_{\text{tot}}$ needles, then
+So if we drop $N_{\text{tot}}$ needles, then the number of crossing needles is approximately
 
 $$
 N_{\text{cross}} \sim \text{Binomial}\left(N_{\text{tot}}, \frac{1}{\pi}\right)
 $$
 
-Our estimate of $\pi$ is
+The observed crossing probability is
 
 $$
-\hat{\pi} = \frac{N_{\text{tot}}}{N_{\text{cross}}}
+\hat{p}
+=
+\frac{N_{\text{cross}}}{N_{\text{tot}}}
 $$
 
-Because this is a Monte Carlo simulation, the error usually shrinks at a rate proportional to
+Since the true crossing probability is $p = 1/\pi$, we estimate $\pi$ by flipping this fraction:
+
+$$
+\hat{\pi}
+=
+\frac{1}{\hat{p}}
+=
+\frac{N_{\text{tot}}}{N_{\text{cross}}}
+$$
+
+The important question is: how quickly does $\hat{\pi}$ get close to $\pi$?
+
+For a binomial random variable, the sample proportion $\hat{p}$ has standard error
+
+$$
+\text{SE}(\hat{p})
+=
+\sqrt{\frac{p(1-p)}{N_{\text{tot}}}}
+$$
+
+This means the error in $\hat{p}$ shrinks like
 
 $$
 \frac{1}{\sqrt{N_{\text{tot}}}}
 $$
 
-This means that if we want about 10 times less error, we need about 100 times more needle drops.
+But our estimate is not $\hat{p}$ directly. Our estimate is
 
-So the convergence is real, but slow:
+$$
+\hat{\pi}
+=
+\frac{1}{\hat{p}}
+$$
+
+So we look at the function
+
+$$
+f(p) = \frac{1}{p}
+$$
+
+Its derivative is
+
+$$
+f'(p) = -\frac{1}{p^2}
+$$
+
+This derivative tells us how much small errors in $\hat{p}$ get magnified when we convert $\hat{p}$ into $\hat{\pi}$.
+
+Since
+
+$$
+p = \frac{1}{\pi}
+$$
+
+we get
+
+$$
+f'(p)
+=
+-\frac{1}{(1/\pi)^2}
+=
+-\pi^2
+$$
+
+So small errors in the crossing probability are magnified by about $\pi^2$ when estimating $\pi$.
+
+Using this derivative approximation,
+
+$$
+\text{SE}(\hat{\pi})
+\approx
+\pi^2
+\sqrt{
+\frac{
+(1/\pi)(1 - 1/\pi)
+}{
+N_{\text{tot}}
+}
+}
+$$
+
+This simplifies to the form
+
+$$
+\text{SE}(\hat{\pi})
+\approx
+\frac{C}{\sqrt{N_{\text{tot}}}}
+$$
+
+where $C$ is a constant. The key point is that the error still shrinks like
+
+$$
+\frac{1}{\sqrt{N_{\text{tot}}}}
+$$
+
+So Buffon's Needle converges at the usual Monte Carlo rate:
+
+$$
+\text{error}
+=
+O\left(\frac{1}{\sqrt{N_{\text{tot}}}}\right)
+$$
+
+This is a slow convergence rate. To make the error about 10 times smaller, we need about 100 times more needle drops.
+
+For example:
 
 - 100 drops gives a rough estimate
-- 10,000 drops gives a much better estimate
-- 1,000,000 drops gives an even better estimate, but still with random noise
+- 10,000 drops gives a better estimate
+- 1,000,000 drops gives a much better estimate, but still has random noise
 
-In other words, Buffon's Needle estimates $\pi$ through randomness, and the accuracy improves like a typical Monte Carlo method:
-
-$$
-\text{error} \approx O\left(\frac{1}{\sqrt{N_{\text{tot}}}}\right)
-$$
+So the simulation does approach $\pi$, but it approaches slowly because randomness only averages out at a rate proportional to $1/\sqrt{N_{\text{tot}}}$.
