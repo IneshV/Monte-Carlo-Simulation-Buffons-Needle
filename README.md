@@ -114,40 +114,46 @@ As $N_{\text{tot}}$ becomes very large, this ratio converges to $\pi$ (by the La
 
 ## How Fast Does It Approach $\pi$?
 
-The estimate approaches $\pi$, but slowly. Each needle drop is a random trial with crossing probability
+The estimate approaches $\pi$, but slowly. Each needle drop is a Bernoulli trial: it either crosses a line or it does not. Since the crossing probability is
 
 $$p = \frac{1}{\pi}$$
 
-If we drop $N_{\text{tot}}$ needles, then the observed crossing probability is
+the number of crossings after $N_{\text{tot}}$ drops follows a binomial distribution:
+
+$$N_{\text{cross}} \sim \text{Binomial}\left(N_{\text{tot}}, p\right)$$
+
+The observed crossing probability is
 
 $$\hat{p} = \frac{N_{\text{cross}}}{N_{\text{tot}}}$$
 
-Since $p = 1/\pi$, we estimate $\pi$ by taking the reciprocal:
+and since $p = 1/\pi$, our estimate of $\pi$ is
 
 $$\hat{\pi} = \frac{1}{\hat{p}} = \frac{N_{\text{tot}}}{N_{\text{cross}}}$$
 
-For a binomial experiment, the standard error of $\hat{p}$ is
+For a binomial experiment, the standard error of the observed proportion is
 
 $$\text{SE}(\hat{p}) = \sqrt{\frac{p(1-p)}{N_{\text{tot}}}}$$
 
-So the error in $\hat{p}$ shrinks like
+So the error in the crossing probability shrinks like
 
 $$\frac{1}{\sqrt{N_{\text{tot}}}}$$
 
-Now use the derivative idea. Since
+To understand how this affects the estimate of $\pi$, think of $\hat{\pi}$ as a function of $\hat{p}$:
 
-$$f(p) = \frac{1}{p}$$
+$$f(\hat{p}) = \frac{1}{\hat{p}}$$
 
-we have
+The derivative is
 
-$$f'(p) = -\frac{1}{p^2}$$
+$$f'(\hat{p}) = -\frac{1}{\hat{p}^2}$$
 
-At $p = 1/\pi$,
+This tells us how sensitive the $\pi$ estimate is to small errors in the crossing probability. Near the true value $p = 1/\pi$, this derivative is approximately
 
 $$f'(p) = -\pi^2$$
 
-So small errors in $\hat{p}$ get multiplied by about $\pi^2$ when converted into errors in $\hat{\pi}$. But this only changes the constant, not the overall rate. Therefore,
+So a small error in $\hat{p}$ becomes about $\pi^2$ times larger when converted into an error in $\hat{\pi}$. However, multiplying by a constant does not change the overall convergence rate.
+
+Therefore, Buffon's Needle has the usual Monte Carlo convergence rate:
 
 $$\text{error} = O\left(\frac{1}{\sqrt{N_{\text{tot}}}}\right)$$
 
-This means the estimate converges at the usual Monte Carlo rate: to make the error about 10 times smaller, we need about 100 times more needle drops.
+This means that to make the estimate about 10 times more accurate, we need about 100 times more needle drops.
