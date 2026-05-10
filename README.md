@@ -109,12 +109,9 @@ $$
 
 Since $\cos(\pi/2)=0$ and $\cos(0)=1$,
 
-$$
-P =
-\frac{1}{\pi}(1)
-=
-\frac{1}{\pi}
-$$
+
+P =\frac{1}{\pi}(1)=\frac{1}{\pi}
+
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
 $N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
