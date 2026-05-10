@@ -29,70 +29,78 @@ Following through with these integrals, we get:
 $$
 P
 =
-\int_{0}^{\pi/2}
-\int_{0}^{\frac{\ell}{2}\sin(\theta)}
-\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
+\int_{\theta=0}^{\frac{\pi}{2}}
+\int_{y=0}^{\frac{\ell}{2}\sin(\theta)}
+\left(
+\frac{1}{\ell}
+\cdot
+\frac{2}{\pi}
+\right)
 \,dy\,d\theta
 $$
 
-Since the integrand is constant with respect to \(y\), we can evaluate the inner integral first:
+Since the quantity inside the integral is constant with respect to \(y\), we first evaluate the inner integral:
 
 $$
 P
 =
-\int_{0}^{\pi/2}
-\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
-\left[
-y
-\right]_{0}^{\frac{\ell}{2}\sin(\theta)}
+\int_{0}^{\frac{\pi}{2}}
+\left(
+\frac{2}{\pi \ell}
+\int_{0}^{\frac{\ell}{2}\sin(\theta)} dy
+\right)
+d\theta
+$$
+
+The inner integral is just the length of the interval:
+
+$$
+\int_{0}^{\frac{\ell}{2}\sin(\theta)} dy
+=
+\frac{\ell}{2}\sin(\theta)
+$$
+
+So we substitute that back in:
+
+$$
+P
+=
+\int_{0}^{\frac{\pi}{2}}
+\left(
+\frac{2}{\pi \ell}
+\cdot
+\frac{\ell}{2}\sin(\theta)
+\right)
+d\theta
+$$
+
+The \(\ell\), \(2\), and \(\frac{1}{2}\) terms cancel:
+
+$$
+P
+=
+\int_{0}^{\frac{\pi}{2}}
+\frac{1}{\pi}\sin(\theta)
 \,d\theta
 $$
 
-Substitute the bounds:
-
-$$
-P
-=
-\int_{0}^{\pi/2}
-\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
-\left(\frac{\ell}{2}\sin(\theta)\right)
-\,d\theta
-$$
-
-Now simplify the constants:
-
-$$
-\left(\frac{1}{\ell}\cdot \frac{2}{\pi}\right)
-\left(\frac{\ell}{2}\right)
-=
-\frac{1}{\pi}
-$$
-
-So the probability becomes:
+Pull out the constant:
 
 $$
 P
 =
 \frac{1}{\pi}
-\int_{0}^{\pi/2}
+\int_{0}^{\frac{\pi}{2}}
 \sin(\theta)
 \,d\theta
 $$
 
-Now evaluate the remaining integral:
+Now evaluate the integral:
 
 $$
-\int_{0}^{\pi/2}
-\sin(\theta)
-\,d\theta
+\int \sin(\theta)\,d\theta
 =
-\left[-\cos(\theta)\right]_{0}^{\pi/2}
-=
--\cos\left(\frac{\pi}{2}\right) + \cos(0)
-=
-0 + 1
-=
-1
+-\cos(\theta)
 $$
 
 Therefore,
@@ -101,7 +109,34 @@ $$
 P
 =
 \frac{1}{\pi}
+\left[
+-\cos(\theta)
+\right]_{0}^{\frac{\pi}{2}}
 $$
+
+Plugging in the bounds:
+
+$$
+P
+=
+\frac{1}{\pi}
+\left(
+-\cos\left(\frac{\pi}{2}\right)
++
+\cos(0)
+\right)
+$$
+
+Since \(\cos(\frac{\pi}{2}) = 0\) and \(\cos(0)=1\),
+
+$$
+P
+=
+\frac{1}{\pi}(0 + 1)
+=
+\frac{1}{\pi}
+$$
+
 
 Going back to the problem, if you drop $N_{\text{tot}}$ total needles, we expect approximately
 $N_{\text{cross}} \=\ N_{\text{tot}} \times \frac{1}{\pi}$
